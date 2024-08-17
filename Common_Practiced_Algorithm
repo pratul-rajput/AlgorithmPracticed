@@ -1,0 +1,281 @@
+#Binary Search--------------------------------------------------------------------------------------------------------------------
+def binary_search(arr, key):
+    l, r = 0, len(arr) - 1
+    while l<= r:
+        mid = l+(r-l) // 2
+        if arr[mid] == key:
+            return mid
+        elif arr[mid] < key:
+            l = mid + 1
+        else:
+            r = mid - 1
+    return -1
+
+# Example usage:
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+key = 5
+print(binary_search(arr, key))  # Output: 4
+
+#bfs----------------------------------------------------------------------------------------------------------------------------
+from collections import deque
+
+def bfs(graph, start):
+    visited = set()  # Initialize an empty set for visited nodes
+    queue = deque([start])  # Initialize the queue with the start node
+    visited.add(start)  # Mark the start node as visited
+    
+    while queue:
+        node = queue.popleft()  # Dequeue the next node
+        print(node)  # Print the current node
+        
+        for neighbor in graph[node]:
+            if neighbor not in visited:  # Visit unvisited neighbors
+                queue.append(neighbor)  # Enqueue the neighbor
+                visited.add(neighbor)  # Mark neighbor as visited
+
+# Example usage
+graph = {
+    'A': ['B', 'C'],
+    'B': ['A', 'D', 'E'],
+    'C': ['A', 'F', 'G'],
+    'D': ['B'],
+    'E': ['B', 'H'],
+    'F': ['C'],
+    'G': ['C'],
+    'H': ['E']
+}
+
+bfs(graph, 'A')
+
+# dfs-----------------------------------------------------------------------------------------------------------------------
+def dfs(graph, start):
+    visited = set()  # To keep track of visited nodes
+    stack = [start]  # Use a list as a stack (LIFO)
+    visited.add(start)
+    
+    while stack:
+        node = stack.pop()  # Pop the last node from the stack (LIFO)
+        print(node)
+        
+        # Push all unvisited neighbors to the stack
+        for neighbor in graph[node]:
+            if neighbor not in visited:
+                stack.append(neighbor)
+                visited.add(neighbor)
+# Example usage
+graph = {
+    'A': ['B', 'C'],
+    'B': ['A', 'D', 'E'],
+    'C': ['A', 'F', 'G'],
+    'D': ['B'],
+    'E': ['B', 'H'],
+    'F': ['C'],
+    'G': ['C'],
+    'H': ['E']
+}
+
+dfs(graph,'A')
+-------------------------------------------------------------------------------------------------------------------------------------------
+def dfs_recursive(graph, node, visited=None):
+    if visited is None:
+        visited = set()
+    
+    if node not in visited:
+        visited.add(node)
+        print(node, end=' ')
+        for neighbor in graph[node]:
+            dfs_recursive(graph, neighbor, visited)
+
+# Example graph represented as an adjacency list
+graph = {
+    'A': ['B', 'C'],
+    'B': ['D', 'E'],
+    'C': ['F'],
+    'D': [],
+    'E': ['F'],
+    'F': []
+}
+
+print("Recursive DFS:")
+dfs_recursive(graph, 'A')
+----------------------------------------------------------------------------------------------------------------------------------------------
+from collections import deque
+
+def bfs(r, c):
+    q = deque()
+    visited = set()
+    visited.add((r, c))
+    q.append((r, c))
+    
+    while q:
+        row, col = q.popleft()
+        print(row,col)
+        directions = [[1, 0], [-1, 0], [0, 1], [0, -1]]
+      
+        for dr, dc in directions:
+            nr, nc = row + dr, col + dc
+            if nr in range(rows) and nc in range(cols) and (nr, nc) not in visited:
+                q.append((nr, nc))
+                visited.add((nr, nc))
+
+# Example usage with your grid
+grid = [
+    ['1', '1', '0', '0', '0'],
+    ['1', '1', '0', '0', '0'],
+    ['0', '0', '1', '0', '0'],
+    ['0', '0', '0', '1', '1']
+]
+rows, cols = len(grid), len(grid[0])
+
+# Example call to bfs function
+bfs(0, 0)
+-------------------------------------------------------------------------------------------------------------------------------------------------
+def dfs(r, c):
+    stack = [(r, c)]
+    visited = set()
+    visited.add((r, c))
+    
+    while stack:
+        row, col = stack.pop()
+        print(row,col)
+        directions = [[1, 0], [-1, 0], [0, 1], [0, -1]]
+        
+        
+        for dr, dc in directions:
+            nr, nc = row + dr, col + dc
+            if nr in range(rows) and nc in range(cols) and (nr, nc) not in visited:
+                stack.append((nr, nc))
+                visited.add((nr, nc))
+
+# Example usage with your grid
+grid = [
+    ['1', '1', '0', '0', '0'],
+    ['1', '1', '0', '0', '0'],
+    ['0', '0', '1', '0', '0'],
+    ['0', '0', '0', '1', '1']
+]
+rows, cols = len(grid), len(grid[0])
+
+# Example call to dfs function
+dfs(0, 0)
+----------------------------------------------------------------------------------------------------------------------------------------------------
+def dfs(r, c):
+    if (
+        r not in range(rows)
+        or c not in range(cols)
+        or (r, c) in visit
+    ):
+        return
+    
+    print(r, c)
+    visit.add((r, c))
+    directions = [[0, 1], [0, -1], [1, 0], [-1, 0]]
+    for dr, dc in directions:
+        dfs(r + dr, c + dc)
+
+grid = [
+    ['1', '1', '0', '0', '0'],
+    ['1', '1', '0', '0', '0'],
+    ['0', '0', '1', '0', '0'],
+    ['0', '0', '0', '1', '1']
+]
+
+visit = set()
+rows, cols = len(grid), len(grid[0])
+
+dfs(0, 0)
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+from collections import deque
+
+# Function to return list containing vertices in Topological order.
+
+
+def topological_sort(adj, V):
+	# Vector to store indegree of each vertex
+	indegree = [0] * V
+	for i in range(V):
+		for vertex in adj[i]:
+			indegree[vertex] += 1
+
+	# Queue to store vertices with indegree 0
+	q = deque()
+	for i in range(V):
+		if indegree[i] == 0:
+			q.append(i)
+	result = []
+	while q:
+		node = q.popleft()
+		result.append(node)
+		# Decrease indegree of adjacent vertices as the current node is in topological order
+		for adjacent in adj[node]:
+			indegree[adjacent] -= 1
+			# If indegree becomes 0, push it to the queue
+			if indegree[adjacent] == 0:
+				q.append(adjacent)
+
+	# Check for cycle
+	if len(result) != V:
+		print("Graph contains cycle!")
+		return []
+	return result
+
+
+if __name__ == "__main__":
+	n = 4 # Number of nodes
+
+	# Edges
+	edges = [[0, 1], [1, 2], [3, 1], [3, 2]]
+
+	# Graph represented as an adjacency list
+	adj = [[] for _ in range(n)]
+
+	# Constructing adjacency list
+	for edge in edges:
+		adj[edge[0]].append(edge[1])
+
+	# Performing topological sort
+	print("Topological sorting of the graph:", end=" ")
+	result = topological_sort(adj, n)
+
+	# Displaying result
+	for vertex in result:
+		print(vertex, end=" ")
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+# A naive recursive implementation
+# of 0-1 Knapsack Problem
+
+def knapSack(W, wt, val, n):
+
+    # Base Case
+    if n == 0 or W == 0:
+        return 0
+
+    # If weight of the nth item is
+    # more than Knapsack of capacity W,
+    # then this item cannot be included
+    # in the optimal solution
+    if (wt[n-1] > W):
+        return knapSack(W, wt, val, n-1)
+
+    # return the maximum of two cases:
+    # (1) nth item included
+    # (2) not included
+    else:
+        return max(
+            val[n-1] + knapSack(
+                W-wt[n-1], wt, val, n-1),
+            knapSack(W, wt, val, n-1))
+
+# end of function knapSack
+
+
+# Driver Code
+if __name__ == '__main__':
+    profit = [60, 100, 120]
+    weight = [10, 20, 30]
+    W = 50
+    n = len(profit)
+    print knapSack(W, weight, profit, n)
+
+# This code is contributed by Nikhil Kumar Singh
+-------------------------------------------------------------------------------------------------------------------------------------------
