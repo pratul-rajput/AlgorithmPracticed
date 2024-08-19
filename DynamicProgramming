@@ -1,0 +1,35 @@
+Given an array of non-negative integers, and a value sum, determine if there is a subset of the given set with sum equal to given sum.
+Input:
+N = 6
+arr[] = {3, 34, 4, 12, 5, 2}
+sum = 9
+Output: 1 
+Explanation: Here there exists a subset with
+sum = 9, 4+3+2 = 9.
+#code
+class Solution:
+    def isSubsetSum(self, N, arr, sum):
+        def isSub(N, arr, sum):
+            # Base case: if the sum is zero, we've found a valid subset
+            if sum == 0:
+                return True
+            # Base case: if no elements are left and the sum is non-zero, return False
+            if N == 0:
+                return False
+            # If the value is already computed, return it
+            if t[N][sum] != -1:
+                return t[N][sum]
+            
+            # If the current element is greater than the sum, skip it
+            if arr[N-1] > sum:
+                t[N][sum] = isSub(N-1, arr, sum)
+            else:
+                # Check by excluding or including the current element
+                t[N][sum] = isSub(N-1, arr, sum) or isSub(N-1, arr, sum - arr[N-1])
+            
+            return t[N][sum]
+        
+        # Initialize the memoization table with -1
+        t = [[-1 for _ in range(sum+1)] for _ in range(N+1)]
+        # Call the recursive function
+        return isSub(N, arr, sum)
