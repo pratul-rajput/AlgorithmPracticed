@@ -1,0 +1,4 @@
+s = "openai"
+sorted_s = sorted(s)  # returns a sorted list of characters
+sorted_string = ''.join(sorted_s)  # join the list back into a string
+print(sorted_string)  # Output: "aeinop"
