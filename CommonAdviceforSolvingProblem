@@ -1,0 +1,37 @@
+Goal of Practice[https://codeforces.com/blog/entry/116371]
+First off, what is the main goal in practicing efficiently? 
+The main goal is  you should come across as many subtle ideas and concepts as quickly as possible and learn to intuitively realize when to apply them. 
+This is what my practice method is centered around.
+Another important goal is you should also feel discomfort in effort of trying to think new ideas as much as possible, but don't mistake this as time being confused with discomfort having no idea what to do. 
+Actively making new insights as fast as possible is the state you should be in a lot during live contests and need to endure actively thinking new ideas while trying to not repeat same ideas in your mind.
+But when you have no clue how to approach/understand a solution to a problem, you are more likely to lose focus and are not helping yourself, so you want to minimize this.
+
+How to Approach Problems in Practice
+Alright, so codeforces seems good. Why only a rating range where you can solve ~30-40% of the time? Shouldn't you be practicing coming up with solutions on your own?
+Well, like I said earlier, you want to come across as many concepts as quickly as possible. If you're able to solve ~80%+ of the problems you're doing on your own, even if it takes a while, 
+or in fact especially if it takes a while, you are not using your time most effectively, as you were already able to come up with the concept on your own. It is OK to read editorials often, 
+that is where you actually learn new things. Binary search on the problem set tab to find a rating range of problems that fits the ~30-40% specification, and I recommend the rating range to a 
+few hundred points wide. You can just shift range upward whenever lower end feels easier and you're solving more.
+
+Well, the next natural question is how long should you take before reading editorials? I will argue only spend 15m thinking, after that if you're still having ideas keep thinking,
+but if you're just stuck read the editorial. However, if reading the editorial gives you new ideas continue thinking again. Sure, you may discover a trick you came up with yourself 
+you can use later after a long time thinking, but was it worth spending 3h coming up with the solution on your own when you could've gone through 2 or 3 more problems 
+if you read the editorial instead. However, going through too hard problems is just as bad is going through too easy problems. It is not worth spending 4h understanding a 
+3000 rated problem when you could learn much more concepts from 4 2300 rated problems in the same amount of time (if that's good for your skill level). That's why I say ~30-40%, this is usually the point where you can understand the editorial relatively quickly but aren't able to see the concepts on your own. Also, this is another reason to use codeforces instead of other sources, the problems are shorter so you can get through more faster and it is easier to find many problems of similar skill level.
+
+Some important notes, however, are to take the 15m of thinking very seriously and implement every problem. This is extremely important!!! you should only be looking at editorial when 
+you are really out of ideas and trying to think longer will just make you unfocused or reiterate old ideas. In other words you should feel mentally exhausted!! (or you're not working 
+thinking hard enough). Don't be lazier than you would be in a contest, don't give up because you don't want to think harder on details, don't think/implement leisurely. 
+It is important to practice making observations on your own, and you should be solving problems in the range more and more often as you go down the problem list, that's how you know 
+you're improving. If you're not improving, you are likely not exhausting yourself thoroughly. You may think you can get through more concepts earlier without implement too, and this
+would fit the main goal of practice better, however, it's important to always implement every problem that isn't completely trivial, even if you mind solve it on your own, as you will 
+remember it better and often you will realize you didn't understand the details as well as you thought before implementing. Always implement before reading editorial if you think you 
+have idea, even when not sure, and don't look at others implementation before you solve even if you read editorial except for last resort.
+
+I also recommend timing yourself when doing problems, at least while implementing. This will help you stay focused and improve your implement speed (which is important 
+so you don't waste time implementing in contest). If you record your times you should hopefully see yourself getting faster for a fixed problem difficulty :).
+
+When you finish a problem, make sure you reflect on techniques and mindset used and how you could generalize thought process to solve other problems more efficiently
+(imagine you were teaching someone else best way to approach similar problems). Similarly do this when you learn new algorithms or tricks and imagine how you would come up with on your own.
+Try to come up with your own list similar to one I have in "extra advice how to think" section. The goal is to find short fundamental list of questions to ask yourself that will always lead to the solution, not just categorizing by algorithms or techniques used. Similarly reflect on what can go wrong and how to consciously avoid mental traps. Also, it can be good to look at others solutions after you finish a problem quickly to see if there are any implementation tricks you don't know, and similarly reflect how you could make your code more concise.
+
