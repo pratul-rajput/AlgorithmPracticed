@@ -33,3 +33,34 @@ class Solution:
         t = [[-1 for _ in range(sum+1)] for _ in range(N+1)]
         # Call the recursive function
         return isSub(N, arr, sum)
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+problem Name:
+platform:Hackerrank
+https://www.hackerrank.com/challenges/one-week-preparation-kit-lego-blocks/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=preparation-kits&playlist_slugs%5B%5D=one-week-preparation-kit&playlist_slugs%5B%5D=one-week-day-six
+def legoBlocks(n, m):
+    MOD = 10**9 + 7
+    
+    # Precompute the number of possible combinations for each row length up to m
+    rows_combination = [1, 1, 2, 4]
+    
+    # Fill in the row combinations for lengths greater than 4
+    while len(rows_combination) <= m:
+        rows_combination.append(sum(rows_combination[-4:]) % MOD)
+    
+    # Total combinations for a wall of height n and width i
+    total = [pow(c, n, MOD) for c in rows_combination]
+    
+    # Solid walls that have no vertical breaks
+    solid = [0] * (m + 1)
+    solid[1] = 1
+    
+    for i in range(2, m + 1):
+        unsolid = 0
+        for j in range(1, i):
+            unsolid += solid[j] * total[i - j]
+            unsolid %= MOD  # Ensuring that the modulo operation is applied at each step
+        
+        solid[i] = (total[i] - unsolid + MOD) % MOD
+    
+    return solid[m]
+        
