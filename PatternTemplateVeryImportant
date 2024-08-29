@@ -40,11 +40,12 @@ int findSubstring(string s){
         int d; //the length of substring
 
         for() { /* initialize the hash map here */ }
-
+        // Move end to find a valid window.
         while(end<s.size()){
 
             if(map[s[end++]]-- ?){  /* modify counter here */ }
 
+            // When we found a valid window, move start to find smaller window.
             while(/* counter condition */){ 
                  
                  /* update d here if finding minimum*/
