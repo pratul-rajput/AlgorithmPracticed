@@ -1,1 +1,25 @@
-
+#Source: https://medium.com/@tudorache.a.bogdan/day-2-strings-the-bear-and-steady-genes-27a85819712a
+def sliding_window(s, window_size):
+    # Initialize variables
+    window_start = 0
+    window_end = 0
+    current_sum = 0
+    
+    # Loop through the string
+    while window_end < len(s):
+        # Expand the window to the right
+        current_sum += s[window_end]
+        window_end += 1
+        
+        # Shrink the window from the left
+        while current_sum > target:
+            current_sum -= s[window_start]
+            window_start += 1
+        
+        # Check if we have found a valid subarray
+        if current_sum == target:
+            return [window_start, window_end - 1]
+    
+    # Return None if no valid subarray found
+    return None
+--------------------------------------------------------------------------------------------------------------
