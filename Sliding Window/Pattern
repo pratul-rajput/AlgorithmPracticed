@@ -1,1 +1,25 @@
+#This pattern can be used for many substring or any other kind of sliding window question
+class Solution:
+    def minWindow(self, s: str, t: str) -> str:
+        n=len(s)
+        count_dict={}
+        left,right=0,0
+        for ch in t:
+            count_dict[ch]=1+count_dict.get(ch,0)
+        min_window_length=n+1
+        min_window_start=0
+        while right<n:
+            if s[right] in count_dict:
+                count_dict[s[right]]-=1
 
+            while all(val<=0 for val in count_dict.values()):
+                if right-left+1<min_window_length: 
+                    min_window_length=right-left+1
+                    min_window_start=left
+                if s[left] in count_dict:
+                    count_dict[s[left]]+=1
+                left+=1
+            right+=1     
+        if min_window_length == n + 1:
+            return ""
+        return s[min_window_start:min_window_start + min_window_length]
