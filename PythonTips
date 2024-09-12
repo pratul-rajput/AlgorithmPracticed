@@ -2,3 +2,18 @@ s = "openai"
 sorted_s = sorted(s)  # returns a sorted list of characters
 sorted_string = ''.join(sorted_s)  # join the list back into a string
 print(sorted_string)  # Output: "aeinop"
+------------------------------------------------------------------
+import math
+from functools import reduce
+
+# Function to calculate GCD of multiple numbers
+def gcd_multiple(numbers):
+    return reduce(math.gcd, numbers)
+
+# Example: finding GCD of multiple numbers
+numbers = [36, 60, 48]
+
+result = gcd_multiple(numbers)
+print(f"GCD of {numbers} is {result}")
+-----------------------------------------------------------------
+
