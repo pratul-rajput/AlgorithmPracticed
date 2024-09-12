@@ -3,6 +3,7 @@ sorted_s = sorted(s)  # returns a sorted list of characters
 sorted_string = ''.join(sorted_s)  # join the list back into a string
 print(sorted_string)  # Output: "aeinop"
 ------------------------------------------------------------------
+# To calculate gcd on multiple number
 import math
 from functools import reduce
 
@@ -16,4 +17,18 @@ numbers = [36, 60, 48]
 result = gcd_multiple(numbers)
 print(f"GCD of {numbers} is {result}")
 -----------------------------------------------------------------
+# working with inputs
+input:
+2
+2 3 4
+10 1 10
 
+code:
+
+t = int(input())
+for test in range(t):
+	a = list(map(int, input().split())) # very very important remember this
+	for i in range(5):
+		a.sort()
+		a[0] += 1
+	print(a[0]*a[1]*a[2])
