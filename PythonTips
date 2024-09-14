@@ -38,3 +38,11 @@ R = lambda: map(int, input().split())
 t, = R()
 exec(t * "n, k = R(); *a, = R(); print('YNEOS'[a > sorted(a) and k < 2 :: 2]);")
 ------------------------------------------------------------------------------------------------------
+for query in ("erase", "eraser", "dream", "dreamer"):
+    if s.endswith(query):
+        s = s[:-len(query)] # if end is negative,then start will start from end
+        break
+else:         #else block will be executed when break is not executed 
+    print('NO')
+    exit()
+
