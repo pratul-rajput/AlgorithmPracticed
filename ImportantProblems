@@ -1,0 +1,31 @@
+---------------------------------------------------------------------------------------------------------------------
+// To count the number of integers divisible by a number M within a given range [L, R], 
+// you can use a mathematical approach rather than iterating through all numbers, 
+// which is more efficient.
+
+// Explanation:
+// Divisibility by M:
+// To count the numbers divisible by M in a range [L, R], we can count 
+// the multiples of M from 1 to R and subtract the multiples of M from 1 to (L − 1). 
+// This gives us the number of multiples of M in the range [L, R].
+
+// Formula:
+// The number of multiples of M from 1 to R is given by floor(R / M).
+// The number of multiples of M from 1 to (L − 1) is given by floor((L − 1) / M).
+
+// Therefore, the count of numbers divisible by M in the range [L, R] is:
+
+// count = floor(R / M) − floor((L − 1) / M)
+
+python code
+def count_numbers_divisible_by_m(L, R, M):
+    # Calculate the multiples of M from 1 to R and subtract multiples from 1 to (L-1)
+    return (R // M) - ((L - 1) // M)
+
+# Example usage:
+L = 10
+R = 50
+M = 7
+result = count_numbers_divisible_by_m(L, R, M)
+print(result)  # Output: 6
+---------------------------------------------------------------------------------------------------------------------------------------------------------
