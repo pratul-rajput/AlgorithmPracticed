@@ -45,4 +45,15 @@ for query in ("erase", "eraser", "dream", "dreamer"):
 else:         #else block will be executed when break is not executed 
     print('NO')
     exit()
+-----------------------------------------------------------------------------------------------------------------------------
+import itertools
 
+# Generate all 4-digit permutations using 0 and 2
+digits = [0, 2]
+permutations = itertools.product(digits, repeat=4)
+print(type(permutations[0]))
+# Filter and print only 4-digit numbers (ignore those starting with 0)
+for perm in permutations:
+    if perm[0] != 0:  # Ensure the first digit is not 0
+        print(''.join(map(str, perm)))
+--------------------------------------------------------------------------------------------------------------------------
