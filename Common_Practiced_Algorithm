@@ -503,3 +503,37 @@ if __name__ == "__main__":
     S2 = "GXTXAYB"
     print("Length of LCS is", get_lcs_length(S1, S2))
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
+import heapq
+
+# 1. heapify: Convert a list into a heap in O(n) time
+nums = [25, 9, 5, 19, 13, 3, 7]
+heapq.heapify(nums)
+print("Heapified list:", nums)  # Output: [3, 9, 5, 19, 13, 25, 7]
+
+# 2. heappush: Insert an element into the heap
+heapq.heappush(nums, 2)
+print("After heappush(2):", nums)  # Output: [2, 9, 3, 19, 13, 25, 7, 5]
+
+# 3. heappop: Remove and return the smallest element
+smallest = heapq.heappop(nums)
+print("Smallest element popped:", smallest)  # Output: 2
+print("After heappop:", nums)  # Output: [3, 9, 5, 19, 13, 25, 7]
+
+# 4. heappushpop: Push a new item and pop the smallest
+pushed_popped = heapq.heappushpop(nums, 6)
+print("Pushed and popped:", pushed_popped)  # Output: 3
+print("After heappushpop(6):", nums)  # Output: [5, 9, 6, 19, 13, 25, 7]
+
+# 5. heapreplace: Pop the smallest and push a new item
+replaced = heapq.heapreplace(nums, 8)
+print("Replaced element:", replaced)  # Output: 5
+print("After heapreplace(8):", nums)  # Output: [6, 9, 7, 19, 13, 25, 8]
+
+# 6. nlargest: Get the 3 largest elements
+largest_three = heapq.nlargest(3, nums)
+print("3 largest elements:", largest_three)  # Output: [25, 19, 13]
+
+# 7. nsmallest: Get the 3 smallest elements
+smallest_three = heapq.nsmallest(3, nums)
+print("3 smallest elements:", smallest_three)  # Output: [6, 7, 8]
+------------------------------------------------------------------------------------------------------------------------
