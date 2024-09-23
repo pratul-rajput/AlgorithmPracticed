@@ -1,0 +1,104 @@
+To build muscle memory and ensure you're well-prepared for placements, focusing on a set of essential algorithms daily will help. Here’s a list of important algorithms that you can incorporate into your daily practice:
+
+### 1. **Sorting Algorithms**
+   - **Quick Sort** (Divide and Conquer)
+   - **Merge Sort** (Divide and Conquer)
+   - **Heap Sort**
+   - **Bubble Sort** (Basic)
+   - **Insertion Sort** (Basic)
+   - **Selection Sort** (Basic)
+   
+   **Practice**: Understand time complexities, and edge cases, and implement them from scratch.
+
+### 2. **Searching Algorithms**
+   - **Binary Search** (Iterative & Recursive)
+   - **Ternary Search**
+   - **Depth-First Search (DFS)** (Graph Traversal)
+   - **Breadth-First Search (BFS)** (Graph Traversal)
+
+### 3. **Dynamic Programming (DP) Algorithms**
+   - **Knapsack Problem (0/1 and Fractional)**
+   - **Longest Common Subsequence**
+   - **Longest Increasing Subsequence**
+   - **Fibonacci Sequence (Recursion + DP Memoization)**
+   - **Edit Distance Problem**
+   - **Coin Change Problem**
+   - **Subset Sum Problem**
+   - **Matrix Chain Multiplication**
+   
+   **Practice**: Focus on state definitions and recurrence relations.
+
+### 4. **Greedy Algorithms**
+   - **Activity Selection Problem**
+   - **Fractional Knapsack Problem**
+   - **Huffman Coding**
+   - **Dijkstra’s Algorithm (Single Source Shortest Path)**
+   - **Prim's Algorithm (Minimum Spanning Tree)**
+   - **Kruskal’s Algorithm (Minimum Spanning Tree)**
+
+### 5. **Backtracking**
+   - **N-Queens Problem**
+   - **Sudoku Solver**
+   - **Subset Generation**
+   - **Permutations and Combinations**
+   - **Rat in a Maze Problem**
+   - **Word Search Problem**
+
+### 6. **Graph Algorithms**
+   - **Dijkstra's Algorithm** (Shortest Path)
+   - **Bellman-Ford Algorithm** (Negative Weight Cycles)
+   - **Floyd-Warshall Algorithm** (All-Pairs Shortest Path)
+   - **Topological Sorting** (DAG)
+   - **Union-Find (Disjoint Set Union)**
+   - **Tarjan's Algorithm (Strongly Connected Components)**
+
+### 7. **Tree Algorithms**
+   - **Binary Tree Traversals (Inorder, Preorder, Postorder)**
+   - **Binary Search Tree Operations (Insert, Delete, Search)**
+   - **AVL Trees (Rotations)**
+   - **Segment Trees (Range Queries)**
+   - **Fenwick Tree (Binary Indexed Tree)**
+
+### 8. **String Algorithms**
+   - **KMP Algorithm (Pattern Matching)**
+   - **Rabin-Karp Algorithm**
+   - **Z Algorithm**
+   - **Trie Data Structure**
+   - **Manacher's Algorithm (Longest Palindromic Substring)**
+
+### 9. **Mathematical Algorithms**
+   - **Sieve of Eratosthenes (Prime Numbers)**
+   - **Greatest Common Divisor (GCD)**
+   - **Euclidean Algorithm**
+   - **Modular Exponentiation**
+   - **Fermat's Theorem**
+   - **Matrix Exponentiation**
+
+### 10. **Bit Manipulation Algorithms**
+   - **Check if a Number is Power of 2**
+   - **Count Set Bits in a Number**
+   - **XOR of All Subsets**
+   - **Find the Single Non-Repeating Number**
+
+### 11. **Divide and Conquer**
+   - **Merge Sort**
+   - **Quick Sort**
+   - **Closest Pair of Points**
+
+### 12. **Miscellaneous Algorithms**
+   - **Sliding Window Technique**
+   - **Two Pointer Technique**
+   - **Kadane's Algorithm (Maximum Subarray Sum)**
+   - **Mo's Algorithm (Query Optimization)**
+
+### Suggested Practice Routine
+- **Day 1**: Sorting + Searching
+- **Day 2**: Dynamic Programming + Greedy
+- **Day 3**: Backtracking + String Algorithms
+- **Day 4**: Graph Algorithms + Tree Algorithms
+- **Day 5**: Mathematical Algorithms + Bit Manipulation
+- **Day 6**: Mixed Algorithm Practice (Time your problem solving)
+- **Day 7**: Revise Weak Areas
+
+This routine can be rotated each week, and algorithms can be shuffled based on the focus area.
+
