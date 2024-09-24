@@ -29,3 +29,41 @@ M = 7
 result = count_numbers_divisible_by_m(L, R, M)
 print(result)  # Output: 6
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
+#find all path between source and detination of undirected and connected graph
+def find_all_paths(graph, start, end):
+    def dfs(current, destination, visited, path):
+        visited.add(current)
+        path.append(current)
+        
+        # If the current node is the destination, store a copy of the path
+        if current == destination:
+            all_paths.append(list(path))  # Store a copy of the current path
+        
+        # Explore the neighbors
+        for neighbor in graph[current]:
+            if neighbor not in visited:
+                dfs(neighbor, destination, visited, path)
+        
+        # Backtrack
+        path.pop()
+        visited.remove(current)
+
+    all_paths = []
+    dfs(start, end, set(), [])
+    return all_paths
+
+# Example usage:
+graph = {
+    'A': ['B', 'C'],
+    'B': ['A', 'D', 'E'],
+    'C': ['A', 'F'],
+    'D': ['B'],
+    'E': ['B', 'F'],
+    'F': ['C', 'E']
+}
+
+start_node = 'A'
+end_node = 'F'
+paths = find_all_paths(graph, start_node, end_node)
+print(paths)
+
