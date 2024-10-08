@@ -1,3 +1,27 @@
+DutchNationalFlagAlgorithm---------------------------------------------------------------------------------------------------
+def dutch_national_flag(arr):
+    low, mid, high = 0, 0, len(arr) - 1
+    
+    while mid <= high:
+        if arr[mid] == 0:
+            # Swap arr[low] and arr[mid], move both pointers
+            arr[low], arr[mid] = arr[mid], arr[low]
+            low += 1
+            mid += 1
+        elif arr[mid] == 1:
+            # Just move the mid pointer
+            mid += 1
+        else:  # arr[mid] == 2
+            # Swap arr[mid] and arr[high], move high pointer only
+            arr[mid], arr[high] = arr[high], arr[mid]
+            high -= 1
+
+# Example usage:
+arr = [2, 0, 1, 2, 0, 1, 1, 0]
+dutch_national_flag(arr)
+print(arr)
+time complexity:O(n)
+space complexity:O(1)
 quickselect------------------------------------------------------------------------------------------------------------------
 from typing import List
 
@@ -36,7 +60,9 @@ solution = Solution()
 nums = [3, 2, 1, 5, 6, 4]
 k = 2
 print(solution.findKthLargest(nums, k))  # Output: 5
-
+T.C:Average case=O(n)
+     Worst Case=O(n^2)
+S.C: O(1)
 #Binary Search--------------------------------------------------------------------------------------------------------------------
 def binary_search(arr, key):
     l, r = 0, len(arr) - 1
@@ -87,7 +113,8 @@ matrix = [
 ]
 target = 9
 print(binary_search_2d(matrix, target))  # Output: True
-
+T.C=O(log(m*n))
+S.C=O(1)
 -------------------------------------------------------------------------------------------------------------------------------
 Most generalised binary search[Modified binary search to solve most binary search problem]
 def binary_search(array) -> int:
