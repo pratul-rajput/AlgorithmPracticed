@@ -91,6 +91,21 @@ print("3 largest elements:", largest_three)  # Output: [25, 19, 13]
 # 7. nsmallest: Get the 3 smallest elements
 smallest_three = heapq.nsmallest(3, nums)
 print("3 smallest elements:", smallest_three)  # Output: [6, 7, 8]
+#max heap-------------------------------
+import heapq
+
+# Sample list
+nums = [1, 8, 3, 7, 2, 6]
+
+# Convert the list to a max-heap by negating the values
+max_heap = [-num for num in nums]
+heapq.heapify(max_heap)
+
+# Pop the four largest elements
+largest_elements = [-heapq.heappop(max_heap) for _ in range(4)]
+
+print(largest_elements)  # Output: [8, 7, 6, 3]
+
 ------------------------------------------------------------------------------------------------------------------------
 import itertools
 
