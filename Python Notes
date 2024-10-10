@@ -2,6 +2,12 @@ s = "openai"
 sorted_s = sorted(s)  # returns a sorted list of characters
 sorted_string = ''.join(sorted_s)  # join the list back into a string
 print(sorted_string)  # Output: "aeinop"
+-------------------------------------------------------------------
+#sorting element based on the second element
+points = [(2, 5), (1, 2), (4, 4), (2, 3)]
+sorted_points = sorted(points, key=lambda x: x[1])
+print(sorted_points)  # Output: [(1, 2), (2, 3), (4, 4), (2, 5)]
+
 ------------------------------------------------------------------
 # To calculate gcd on multiple number
 import math
