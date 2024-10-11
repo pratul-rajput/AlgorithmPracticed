@@ -34,6 +34,18 @@ def bucket_sort(arr):
 arr = [0.78, 0.17, 0.39, 0.26, 0.72, 0.94, 0.21, 0.12, 0.23, 0.68]
 sorted_arr = bucket_sort(arr)
 print(sorted_arr)
+************************************
+Time Complexity
+- Average Case: O(n) — Efficient when elements are uniformly distributed.
+- Worst Case: O(n^2) — Happens if all elements fall into one bucket.
+- Best Case: O(n) — When elements are perfectly distributed into buckets.
+
+Space Complexity
+- Space: O(n) — Requires space for the buckets and the input array.
+
+Summary: Bucket sort works best when elements are evenly distributed and the number of buckets is proportional to the number of elements.
+
+************************************
 
 Reverse a Singly linked List-------------------------------------------------------------------------------------------------
 
