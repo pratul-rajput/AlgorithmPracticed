@@ -594,9 +594,10 @@ if __name__ == '__main__':
 
 # This code is contributed by Suyash Saxena
 --------------------------------------------------------------------------------------------------------------
+
 def findRedundantConnection(edges):
     par = [i for i in range(len(edges) + 1)]
-    rank = [1] * (len(edges) + 1)
+    size = [1] * (len(edges) + 1)  # Using 'size' to represent the size of each set
 
     def find(n):
         if par[n] != n:
@@ -609,13 +610,13 @@ def findRedundantConnection(edges):
         if p1 == p2:
             return False  # They are already connected (cycle detected)
         
-        # Union by rank
-        if rank[p1] > rank[p2]:
+        # Union by size
+        if size[p1] > size[p2]:
             par[p2] = p1
-            rank[p1] += rank[p2]
+            size[p1] += size[p2]  # Update size of the new root
         else:
             par[p1] = p2
-            rank[p2] += rank[p1]
+            size[p2] += size[p1]  # Update size of the new root
         return True
 
     # Iterate through each edge and attempt to union the nodes
