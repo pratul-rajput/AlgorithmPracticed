@@ -826,6 +826,12 @@ def heap_sort(arr):
 arr = [12, 11, 13, 5, 6, 7]
 heap_sort(arr)
 print("Sorted array:", arr)
+************************************************************************
+This is in-place sorting Algorithm[means it does not require extra space]
+T.C
+AVerage,Worst,Best:O(nlogn)
+Space Complexity:O(1)
+*************************************************************************
 -----------------------------------------------------------------------------------------------------------------------
 #QuickSort
 def quick_sort(arr):
