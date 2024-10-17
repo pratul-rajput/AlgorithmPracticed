@@ -5,7 +5,7 @@ Input: set[] = {3, 34, 4, 12, 5, 2}, sum = 9
 Output: True
 Explanation: There is a subset (4, 5) with sum 9.
 # Efficient Tabulation code
-
+https://www.geeksforgeeks.org/subset-sum-problem-dp-25/
 #SOURCE:GFG
 ```python
 def isSubsetSum(set, n, sum):
