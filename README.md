@@ -2,7 +2,7 @@
 
 Frequent File
 
-[[Common_](https://github.com/pratul-rajput/AlgorithmPracticed/blob/main/Common_Practiced_Algorithm)](https://github.com/pratul-rajput/AlgorithmPracticed/blob/main/Common_Practiced_Algorithm)
+https://github.com/pratul-rajput/AlgorithmPracticed/blob/main/Common_Practiced_Algorithm
 
 https://github.com/pratul-rajput/AlgorithmPracticed/blob/main/ClassicProblems
 
