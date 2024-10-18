@@ -1,3 +1,32 @@
+Dijkstra's Algorithm-------------------------------------------------------------------------------------------------------
+import heapq
+
+def dijkstra(graph, source):
+    # Number of vertices
+    n = len(graph)
+    # Distance array initialized to infinity
+    distances = [float('inf')] * n
+    # Set the distance for the source node
+    distances[source] = 0
+    # Min-heap priority queue
+    pq = [(0, source)]
+    while pq:
+        current_distance, current_node = heapq.heappop(pq)
+        # Skip if we found a better way already
+        if current_distance > distances[current_node]:
+            continue
+        # Iterate over neighboring nodes and edge weights
+        for neighbor, weight in graph[current_node]:
+            distance = current_distance + weight
+            # If a shorter path is found
+            if distance < distances[neighbor]:
+                distances[neighbor] = distance
+                heapq.heappush(pq, (distance, neighbor))
+    return distances
+*********************************************
+T.C: O((VlogV)+(ElogV))=O((V+E)logV)=O(ElogV)
+S.C:(V+E)
+*********************************************
 Bucket Sort-----------------------------------------------------------------------------------------------------------------
 def bucket_sort(arr):
     if len(arr) == 0:
