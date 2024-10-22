@@ -1,4 +1,5 @@
 #This pattern can be used for many substring or any other kind of sliding window question
+#variable size sliding window approach 
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
         n=len(s)
