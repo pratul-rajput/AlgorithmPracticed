@@ -73,7 +73,10 @@ if __name__ == "__main__":
 
     head = merge_sort(head)
     print_list(head)
-
+*****************************************************
+Time Complexity: O(n*log(n))
+Auxiliary Space: O(logn)
+*****************************************************
 Starting Node of a Loop in Linked List----------------------------------------------------------------
 # Python3 program to return first node of loop.
 
