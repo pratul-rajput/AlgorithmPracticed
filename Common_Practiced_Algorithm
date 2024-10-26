@@ -1,3 +1,32 @@
+Tree BFS----------------------------------------------------------------------------------
+from collections import deque
+
+class TreeNode:
+    def __init__(self, value=0, left=None, right=None):
+        self.value = value
+        self.left = left
+        self.right = right
+
+def bfs(root):
+    if not root:
+        return []
+    
+    queue = deque([root])
+    result = []
+    
+    while queue:
+        node = queue.popleft()
+        result.append(node.value)
+        
+        if node.left:
+            queue.append(node.left)
+        if node.right:
+            queue.append(node.right)
+    
+    return result
+----------------------
+space=time=O(n)
+----------------------
 reverse DLL----------------------------------------------------------------------------------------------------------------
 
 class Node:
