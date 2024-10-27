@@ -120,3 +120,9 @@ public class AssociationExample {
     }
 }
 ---------------------------------------------------------------------------------------------------
+Here's a one-line difference between association, composition, and aggregation:
+
+Association: A general "uses-a" relationship where objects work together but remain independent.
+Composition: A strong "has-a" relationship where the contained object's lifecycle depends on the container object.
+Aggregation: A weak "has-a" relationship where contained objects can exist independently of the container object.
+---------------------------------------------------------------------------------------------------------------------------
