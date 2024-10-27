@@ -1,0 +1,122 @@
+Aggregation---------------------------------------
+import java.util.ArrayList;
+import java.util.List;
+
+class Book {
+    private String title;
+
+    public Book(String title) {
+        this.title = title;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+}
+
+class Library {
+    private List<Book> books = new ArrayList<>();  // Aggregation: Library has Books
+
+    public void addBook(Book book) {
+        books.add(book);
+    }
+
+    public void showBooks() {
+        for (Book book : books) {
+            System.out.println("Book: " + book.getTitle());
+        }
+    }
+}
+
+// Main method
+public class AggregationExample {
+    public static void main(String[] args) {
+        Book book1 = new Book("The Great Gatsby");
+        Book book2 = new Book("1984");
+
+        Library library = new Library();
+        library.addBook(book1);
+        library.addBook(book2);
+
+        library.showBooks();
+
+        // Books still exist even if library is deleted
+        library = null;
+        System.out.println("Book1 still exists: " + book1.getTitle());
+        System.out.println("Book2 still exists: " + book2.getTitle());
+    }
+}
+-------------------------------------------------------------------------------
+Composition----------------------------------------------------------------------
+class Engine {
+    private String power;
+
+    public Engine(String power) {
+        this.power = power;
+    }
+
+    public void start() {
+        System.out.println("Engine with power " + power + " started.");
+    }
+}
+
+class Car {
+    private String model;
+    private Engine engine;  // Composition: Car owns Engine
+
+    public Car(String model, String power) {
+        this.model = model;
+        this.engine = new Engine(power);  // Engine is created when Car is created
+    }
+
+    public void drive() {
+        engine.start();
+        System.out.println(model + " is driving.");
+    }
+}
+
+// Main method
+public class CompositionExample {
+    public static void main(String[] args) {
+        Car car = new Car("Toyota Corolla", "180 HP");
+        car.drive();
+
+        // When car is deleted, engine is also deleted as it belongs to car
+        car = null;
+    }
+}
+Association------------------------------------------------------------------------------
+class Teacher {
+    private String name;
+
+    public Teacher(String name) {
+        this.name = name;
+    }
+
+    public void teach(Student student) {
+        System.out.println(name + " is teaching " + student.getName());
+    }
+}
+
+class Student {
+    private String name;
+
+    public Student(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+}
+
+// Main method
+public class AssociationExample {
+    public static void main(String[] args) {
+        Teacher teacher = new Teacher("Mr. Smith");
+        Student student = new Student("John");
+
+        teacher.teach(student);
+    }
+}
+---------------------------------------------------------------------------------------------------
