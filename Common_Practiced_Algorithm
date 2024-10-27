@@ -1,3 +1,22 @@
+integer to hexadecimal----------------------------------------------------------------------------
+def integer_to_hexadecimal(n):
+    if n == 0:
+        return "0"
+    
+    hex_chars = "0123456789ABCDEF"
+    hexadecimal = ""
+    
+    while n > 0:
+        remainder = n % 16
+        hexadecimal = hex_chars[remainder] + hexadecimal
+        n = n // 16
+    
+    return hexadecimal
+
+# Test
+number = 254
+print(f"The hexadecimal representation of {number} is {integer_to_hexadecimal(number)}")
+
 Merge-sort on LinkedList------------------------------------------------------------------------
 #sorting singly linked list
 # Python program for merge sort on singly linked list
