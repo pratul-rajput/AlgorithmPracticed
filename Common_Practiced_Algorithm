@@ -1,3 +1,22 @@
+binary to integer---------------------------------------------------------------------------------
+def binary_to_integer(binary_string):
+    decimal_value = 0
+    power = 0
+
+    # Process each bit from right to left
+    for bit in reversed(binary_string):
+        if bit == '1':
+            decimal_value += 2 ** power
+        elif bit != '0':
+            raise ValueError("Invalid character in binary string")
+        power += 1
+
+    return decimal_value
+
+# Test
+binary_string = "1010"
+print(f"The integer value of binary '{binary_string}' is {binary_to_integer(binary_string)}")
+
 integer to hexadecimal----------------------------------------------------------------------------
 def integer_to_hexadecimal(n):
     if n == 0:
