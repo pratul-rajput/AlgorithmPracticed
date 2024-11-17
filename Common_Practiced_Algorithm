@@ -1,3 +1,15 @@
+print All Subarray--------------------------------------------------------------------------
+def print_all_subarrays(arr):
+    n = len(arr)
+    for start in range(n):
+        for end in range(start, n):
+            # Print the subarray from index `start` to `end`
+            print(arr[start:end + 1])
+
+# Example usage
+array = [1, 2, 3]
+print_all_subarrays(array)
+time and space=O(n^2)
 Evaluate a Prefix Expression-------------------------------------------------------------------------------
 """
 Python3 program to evaluate a prefix expression.
