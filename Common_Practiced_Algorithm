@@ -62,44 +62,83 @@ Time Complexity: O(N)
 
 Space Complexity: O(N)
 *************************************************
-binary to integer---------------------------------------------------------------------------------
-def binary_to_integer(binary_string):
+conversion from decimal and to decimal--------------------------------------------------------------------------------
+def convert_to_decimal(number: str, base: int) -> int:
+    """
+    Convert a number from any base to decimal.
+    
+    :param number: The input number as a string.
+    :param base: The base of the input number.
+    :return: The decimal equivalent of the number.
+    """
     decimal_value = 0
     power = 0
 
-    # Process each bit from right to left
-    for bit in reversed(binary_string):
-        if bit == '1':
-            decimal_value += 2 ** power
-        elif bit != '0':
-            raise ValueError("Invalid character in binary string")
+    # Iterate through each digit in reverse (starting from least significant digit)
+    for digit in reversed(number):
+        if digit.isdigit():  # For numeric digits
+            value = int(digit)
+        else:  # For alphabetic digits (e.g., A-F for hexadecimal)
+            value = ord(digit.upper()) - ord('A') + 10
+        
+        # Ensure the digit is valid for the base
+        if value >= base:
+            raise ValueError(f"Invalid digit '{digit}' for base {base}.")
+        
+        decimal_value += value * (base ** power)
         power += 1
 
     return decimal_value
 
-# Test
-binary_string = "1010"
-print(f"The integer value of binary '{binary_string}' is {binary_to_integer(binary_string)}")
 
-integer to hexadecimal----------------------------------------------------------------------------
-def integer_to_hexadecimal(n):
-    if n == 0:
+def convert_from_decimal(decimal_number: int, base: int) -> str:
+    """
+    Convert a decimal number to any base.
+    
+    :param decimal_number: The input number in decimal.
+    :param base: The target base.
+    :return: The equivalent number in the target base as a string.
+    """
+    if decimal_number == 0:
         return "0"
     
-    hex_chars = "0123456789ABCDEF"
-    hexadecimal = ""
-    
-    while n > 0:
-        remainder = n % 16
-        hexadecimal = hex_chars[remainder] + hexadecimal
-        n = n // 16
-    
-    return hexadecimal
+    digits = []
+    while decimal_number > 0:
+        remainder = decimal_number % base
+        if remainder < 10:  # For numeric digits
+            digits.append(str(remainder))
+        else:  # For alphabetic digits (e.g., A-F for hexadecimal)
+            digits.append(chr(ord('A') + remainder - 10))
+        
+        decimal_number //= base
 
-# Test
-number = 254
-print(f"The hexadecimal representation of {number} is {integer_to_hexadecimal(number)}")
+    # The digits are generated in reverse order
+    return ''.join(reversed(digits))
 
+
+# Example Usage:
+binary_number = "1010"
+binary_to_decimal = convert_to_decimal(binary_number, 2)
+print(f"Binary {binary_number} to Decimal: {binary_to_decimal}")
+
+decimal_number = 10
+decimal_to_binary = convert_from_decimal(decimal_number, 2)
+print(f"Decimal {decimal_number} to Binary: {decimal_to_binary}")
+
+hexadecimal_number = "1A3"
+hexadecimal_to_decimal = convert_to_decimal(hexadecimal_number, 16)
+print(f"Hexadecimal {hexadecimal_number} to Decimal: {hexadecimal_to_decimal}")
+
+decimal_to_hexadecimal = convert_from_decimal(decimal_number, 16)
+print(f"Decimal {decimal_number} to Hexadecimal: {decimal_to_hexadecimal}")
+'''output
+Binary 1010 to Decimal: 10
+Decimal 10 to Binary: 1010
+Hexadecimal 1A3 to Decimal: 419
+Decimal 10 to Hexadecimal: A
+'''
+*************************************************************************************
+--------------------------------------------------------------------------------
 Merge-sort on LinkedList------------------------------------------------------------------------
 #sorting singly linked list
 # Python program for merge sort on singly linked list
