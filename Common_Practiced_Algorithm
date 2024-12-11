@@ -367,7 +367,7 @@ head.next.next.next.next = Node(5)
 middle_node = find_middle(head)
 
 # Display the value of the middle node
-print("The middle node value is:", middle_node.data)                         
+print("The middle node value is:", middle_node.value)                         
 Tree DFS------------------------------------------------------------------------------------
 # Python3 program to for tree traversals
 
