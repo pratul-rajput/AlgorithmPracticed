@@ -442,6 +442,18 @@ def bfs(root):
             queue.append(node.right)
     
     return result
+# Create a binary tree
+root = TreeNode(1)
+root.left = TreeNode(2)
+root.right = TreeNode(3)
+root.left.left = TreeNode(4)
+root.left.right = TreeNode(5)
+root.right.left = TreeNode(6)
+root.right.right = TreeNode(7)
+
+# Perform BFS traversal
+print(bfs(root))  # Output: [1, 2, 3, 4, 5, 6, 7]
+
 ----------------------
 space=time=O(n)
 ----------------------
