@@ -275,6 +275,9 @@ if loopNode:
     print(loopNode.data)
 else:
     print(-1)
+***************
+output:10
+***************
 Loop Detection LinkedList--------------------------------------------------------------------------
 class ListNode:
     def __init__(self, value=0, next=None):
