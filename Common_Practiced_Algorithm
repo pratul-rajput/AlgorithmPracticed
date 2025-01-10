@@ -9,6 +9,15 @@ def print_all_subarrays(arr):
 # Example usage
 array = [1, 2, 3]
 print_all_subarrays(array)
+********************
+output:
+[1]
+[1, 2]
+[1, 2, 3]
+[2]
+[2, 3]
+[3]
+********************
 time and space=O(n^2)
 Evaluate a Prefix Expression-------------------------------------------------------------------------------
 def is_operand(c):
