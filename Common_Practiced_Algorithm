@@ -422,6 +422,14 @@ root.left.right = Node(5)
 print "\nInorder traversal of binary tree is"
 printInorder(root)
 *******************************
+output:
+Inorder traversal of binary tree is
+4
+2
+5
+1
+3
+complexity:
 Time Complexity: O(N)
 Auxiliary Space: O(log N)
 *******************************
