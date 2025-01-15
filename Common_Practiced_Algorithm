@@ -1435,4 +1435,55 @@ def bubble_sort(arr):
 arr = [64, 34, 25, 12, 22, 11, 90]
 bubble_sort(arr)
 print("Sorted array:", arr)
-------------------------------------------------------------------------------------------------------------
+Selection sort------------------------------------------------------------------------------------------------------------
+def selection_sort(arr):
+    n = len(arr)
+    for i in range(n - 1):
+        # Assume the first element of the unsorted part is the smallest
+        min_index = i
+        # Find the smallest element in the unsorted part
+        for j in range(i + 1, n):
+            if arr[j] < arr[min_index]:
+                min_index = j
+        # Swap the found minimum element with the first element of the unsorted part
+        arr[i], arr[min_index] = arr[min_index], arr[i]
+
+# Example usage
+arr = [64, 25, 12, 22, 11]
+selection_sort(arr)
+print("Sorted array:", arr)
+****************************************
+time complexity: best=worst=average=O(n^2)
+space complexity: O(1)
+stability:Not Stable[If two elements are equal, their relative order may not be preserved after sorting.]
+****************************************
+Shell sort-----------------------------------------------------------------------------------------------------------------
+# Shell Sort is an optimization of Insertion Sort.
+def shell_sort(arr):
+    n = len(arr)
+    # Start with a large gap, then reduce the gap
+    gap = n // 2
+    while gap > 0:
+        for i in range(gap, n):
+            # Perform a gapped insertion sort
+            temp = arr[i]
+            j = i
+            # Shift earlier gap-sorted elements up until the correct location for arr[i] is found
+            while j >= gap and arr[j - gap] > temp:
+                arr[j] = arr[j - gap]
+                j -= gap
+            arr[j] = temp
+        # Reduce the gap for the next iteration
+        gap //= 2
+
+# Example usage
+arr = [12, 34, 54, 2, 3]
+shell_sort(arr)
+print("Sorted array:", arr)
+****************************************************
+Time Complexity:
+Best:O(nlogn)
+Worst Case:O(n^2)
+Average Case:O(n^(3/2)
+Space Complexity: O(1)
+Stability: Not Stable 
